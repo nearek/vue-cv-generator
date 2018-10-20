@@ -1,22 +1,29 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+<div>
+  <input v-model="forms.name" placeholder="Name">
+  <input v-model="forms.surename" placeholder="Surename">
+  <input v-model="forms.address" placeholder="Address">
+  <input v-model="forms.phone" placeholder="Phone">
+  <input v-model="forms.email" placeholder="Email">
+  <input v-model="forms.born" placeholder="Born">
+  Driving License
+  <input type="radio" id="yes" value="Yes" v-model="forms.drivingLicense">
+  <label for="yes">Yes</label>
+  <input type="radio" id="no" value="No" v-model="forms.drivingLicense">
+  <label for="no">No</label>
+
+
+  <p> <br>
+      Name:{{ forms.name }}<br>
+      Surename:{{ forms.surename }}<br>
+      Address:{{ forms.address }}<br>
+      Phone:{{ forms.phone }}<br>
+      Email:{{ forms.email }}<br>
+      Born:{{ forms.born }}<br> 
+      Driving License: {{ forms.drivingLicense }}
+  </p>
+</div>
+
 </template>
 
 <script>
@@ -24,7 +31,17 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      forms: [
+         {
+            'name' : '',
+            'surename' : '',
+            'address' : '',
+            'phone' : '',
+            'email' : '',
+            'born' : '',
+            'drivingLicense' : true,
+          }
+      ]
     }
   }
 }
