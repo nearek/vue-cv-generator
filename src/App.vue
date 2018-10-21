@@ -1,27 +1,24 @@
 <template>
-<div>
-  <input v-model="forms.name" placeholder="Name">
-  <input v-model="forms.surename" placeholder="Surename">
-  <input v-model="forms.address" placeholder="Address">
-  <input v-model="forms.phone" placeholder="Phone">
-  <input v-model="forms.email" placeholder="Email">
-  <input v-model="forms.born" placeholder="Born">
-  Driving License
-  <input type="radio" id="yes" value="Yes" v-model="forms.drivingLicense">
-  <label for="yes">Yes</label>
-  <input type="radio" id="no" value="No" v-model="forms.drivingLicense">
-  <label for="no">No</label>
+<div class="wrapper">
+  
+ <div class="left">
+  <div class="cv-tmpl-1">
+   <div class="cv-values">
+   <div class="full-name todo-item-left">
+   <div class="todo-item-label">{{ forms.name }}</div>
+   <input type="text" v-model="forms.name" placeholder="Name" class="name todo-item-edit">
+    
+   </div>
+   <input v-model="forms.surename" placeholder="Surename" class="surename"> 
+
+   </div>
+</div>
+  </div>
 
 
-  <p> <br>
-      Name:{{ forms.name }}<br>
-      Surename:{{ forms.surename }}<br>
-      Address:{{ forms.address }}<br>
-      Phone:{{ forms.phone }}<br>
-      Email:{{ forms.email }}<br>
-      Born:{{ forms.born }}<br> 
-      Driving License: {{ forms.drivingLicense }}
-  </p>
+    <div class="right">
+    test
+    </div>
 </div>
 
 </template>
@@ -33,13 +30,55 @@ export default {
     return {
       forms: [
          {
-            'name' : '',
-            'surename' : '',
-            'address' : '',
-            'phone' : '',
-            'email' : '',
-            'born' : '',
-            'drivingLicense' : true,
+            'name' : [
+              {
+                'value': 'name',
+                'visible': true,
+                'editing': false,
+              }
+            ],
+            'surename' : [
+              {
+                'value': 'surename',
+                'visible': true,
+                'editing': false,
+              }
+            ],
+            'address' : [
+              {
+                'value': 'address',
+                'visible': true,
+                'editing': false,
+              }
+            ],
+            'phone' : [
+              {
+                'value': 'phone',
+                'visible': true,
+                'editing': false,
+              }
+            ],
+            'email' : [
+              {
+                'value': 'email',
+                'visible': true,
+                'editing': false,
+              }
+            ],
+            'born' : [
+              {
+                'value': 'born',
+                'visible': true,
+                'editing': false,
+              }
+            ],
+              'name' : [
+              {
+                'value': 'name',
+                'visible': true,
+                'editing': false,
+              }
+            ],
           }
       ]
     }
@@ -47,31 +86,37 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style>
+.wrapper{
+  height:100%;
+  width:100%;
+  display: inline-flex;
+}
+.left{
+  width:80%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
 }
 
-h1, h2 {
-  font-weight: normal;
+.right{
+   width:20%;
+  height:29.7cm;
+  background: #E0E0E0;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.cv-tmpl-1{
+  height:29.7cm;
+  width: 21cm;
+  border: 1px solid #E0E0E0;
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
+.cv-values{
+  padding: 5% 9%;
 }
 
-a {
-  color: #42b983;
+.cv-values .full-name{
+ 
 }
 </style>
